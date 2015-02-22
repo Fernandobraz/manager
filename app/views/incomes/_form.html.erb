@@ -1,0 +1,66 @@
+<%= form_for @income, :html => { :class => "form-horizontal income" } do |f| %>
+
+    <% if @income.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@income.errors.count, "error") %> prohibited this income from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @income.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :value, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :value, :class => 'form-control' %>
+    </div>
+    <%= error_span(@income[:value]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :origin, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :origin, :class => 'form-control' %>
+    </div>
+    <%= error_span(@income[:origin]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :paymentDate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_field :paymentDate, :class => 'form-control' %>
+    </div>
+    <%= error_span(@income[:paymentDate]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :extrainfo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :extrainfo, :class => 'form-control' %>
+    </div>
+    <%= error_span(@income[:extrainfo]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :currency, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :currency, :class => 'form-control' %>
+    </div>
+    <%= error_span(@income[:currency]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :jobDate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_field :jobDate, :class => 'form-control' %>
+    </div>
+    <%= error_span(@income[:jobDate]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            incomes_path, :class => 'btn btn-default' %>
+
+<% end %>

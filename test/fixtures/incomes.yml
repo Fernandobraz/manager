@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: 1.5
+  origin: MyString
+  paymentDate: 2015-02-16
+  extrainfo: MyText
+  currecy: MyString
+  jobDate: 2015-02-16
+
+two:
+  value: 1.5
+  origin: MyString
+  paymentDate: 2015-02-16
+  extrainfo: MyText
+  currecy: MyString
+  jobDate: 2015-02-16

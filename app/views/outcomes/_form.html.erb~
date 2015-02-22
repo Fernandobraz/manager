@@ -1,0 +1,73 @@
+<%= form_for @outcome, :html => { :class => "form-horizontal outcome" } do |f| %>
+
+    <% if @outcome.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@outcome.errors.count, "error") %> prohibited this outcome from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @outcome.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :value, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :value, :class => 'form-control' %>
+    </div>
+    <%= error_span(@outcome[:value]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :destiny, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :destiny, :class => 'form-control' %>
+    </div>
+    <%= error_span(@outcome[:destiny]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :paymentDate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :paymentDate, :class => 'form-control' %>
+    </div>
+    <%= error_span(@outcome[:paymentDate]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :extrainfo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :extrainfo, :class => 'form-control' %>
+    </div>
+    <%= error_span(@outcome[:extrainfo]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :currecy, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :currecy, :class => 'form-control' %>
+    </div>
+    <%= error_span(@outcome[:currecy]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :taxReduce, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :taxReduce, :class => 'form-control' %>
+    </div>
+    <%= error_span(@outcome[:taxReduce]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :userId, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :userId, :class => 'form-control' %>
+    </div>
+    <%= error_span(@outcome[:userId]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            outcomes_path, :class => 'btn btn-default' %>
+
+<% end %>
