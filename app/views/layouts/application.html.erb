@@ -7,6 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="header">
+    <div class="container_12">
+      <div class="grid_4 logo">
+        a
+      </div>
+      <div class="grid_8 user_interface">
+        <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path %>
+        <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
+        <%= link_to "Your account", edit_user_path(current_user.id) %>
+      </div>
+      <div class="clear"></div>
+      <div class="grid_12 menu">
+        <ul>
+          <li><%= link_to "Incomes", incomes_path %></li>
+          <li><%= link_to "Outcomes", outcomes_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <div id="main">
     <div class="container_12">
       <div class="grid_10">

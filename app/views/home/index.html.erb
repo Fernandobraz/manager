@@ -1,2 +1,27 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container_12 board">
+  <div class="grid_6 last_incomes">
+    <ul>
+      <% @last_incomes.each do |result| %>
+      <li><%= result.paymentDate %> <%= result.value.to_i %> </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class=" grid_6 current_month">
+    a
+  </div>
+  <div class="clear"></div>
+  <div class="grid_6 last_outcomes">
+    <ul>
+      <% @last_outcomes.each do |result| %>
+      <li><%= result.paymentDate %> <%= result.value.to_i %> </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="grid_6 extra_info">
+    a
+  </div>
+  <div class="clear"></div>
+  <div class="grid 12 total_money">
+   Total: <%= current_user.total_money %>
+  </div>
+</div>
